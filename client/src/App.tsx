@@ -3,13 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Theme1 from "./themes/theme1";
-import Header from "./components/Common/Header/Header";
-import Footer from "./components/Common/Footer/Footer";
-import Home from "./components/Home/Home";
+import Header from "./components/Common/Header";
+import Footer from "./components/Common/Footer";
 import SigninSide from "./components/Auth/SigninSide";
 import Signup from "./components/Auth/Signup";
 import Images from "./components/Images/Images";
-import Receipt from "./components/Receipt/Receipt";
+import Receipt from "./components/Receipt";
+
+import Home from "./pages/Home";
 
 function App() {
   return (

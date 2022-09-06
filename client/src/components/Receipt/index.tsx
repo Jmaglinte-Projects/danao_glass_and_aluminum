@@ -20,7 +20,7 @@ import {
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 import images from "../../constants/images";
-import Banner from "../Common/Banner/Banner";
+import Banner from "../Common/Banner";
 import ImageDialog from "./ImageDialog";
 import AddModal from "./AddModal";
 import { getReceipts, deleteReceipt } from "../../actions/receipts";

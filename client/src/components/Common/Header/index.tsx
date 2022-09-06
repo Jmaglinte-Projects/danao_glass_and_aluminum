@@ -98,7 +98,7 @@ const Header = () => {
               container
               sx={{ width: "200px", marginRight: "10px", display: { xs: "none", md: "flex" } }}
             >
-              <Link to="/">
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <Grid container alignItems="center" spacing={1} sx={{ padding: "10px 0" }}>
                   <Grid item sx={{ maxWidth: "60px" }}>
                     <img src={mainLogo} />
@@ -234,6 +234,7 @@ const Header = () => {
                       <MenuItem key={setting} onClick={handleCloseUserMenu}>
                         <Typography
                           textAlign="center"
+                          // eslint-disable-next-line @typescript-eslint/no-empty-function
                           onClick={setting == "Logout" ? logout : () => {}}
                         >
                           {setting}
