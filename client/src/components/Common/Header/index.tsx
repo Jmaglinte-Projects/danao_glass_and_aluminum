@@ -201,9 +201,11 @@ const Header = () => {
                 textDecoration: "none",
               }}
             >
-              <Link to="/">
-                <img src={mainLogo} style={{ width: "130px" }} />
-              </Link>
+              <Box component="div" sx={{ maxWidth: "60px" }}>
+                <Link to="/">
+                  <img src={mainLogo} style={{ width: "130px", padding: "10px 0" }} />
+                </Link>
+              </Box>
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>

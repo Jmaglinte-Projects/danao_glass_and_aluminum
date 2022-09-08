@@ -1,42 +1,52 @@
 import React from "react";
 import "./styles.scss";
 import { useTheme } from "@mui/material/styles";
-import { Container, Box, MobileStepper, Paper, Typography, Button } from "@mui/material";
+import {
+  Container,
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+} from "@mui/material";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-
 import { motion, AnimatePresence } from "framer-motion";
+
+// SECTIONS
+import Main from "./Sections/Main";
+import ServicesWeOffer from "./Sections/ServicesWeOffer";
+import WhatWeDo from "./Sections/WhatWeDo";
+import ContactUs from "./Sections/ContactUs";
+import GoogleMap from "./Sections/GoogleMap";
 
 import slider_1 from "../../assets/images/banner/slider/1.jpg";
 import slider_2 from "../../assets/images/banner/slider/2.jpg";
 import slider_3 from "../../assets/images/banner/slider/3.jpg";
-
 import imgAfter from "../../assets/images/bnr_after.png";
 import bannerMain from "../../assets/images/banner/main.png";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: slider_1,
-  },
-  {
-    label: "Bird",
-    imgPath: slider_2,
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath: slider_3,
-  },
+const sliderImages = [
+  { label: "San Francisco – Oakland Bay Bridge, United States", imgPath: slider_1 },
+  { label: "Bird", imgPath: slider_2 },
+  { label: "Bali, Indonesia", imgPath: slider_3 },
 ];
+
+// const sliderImages = [
+// 	{ label: "San Francisco – Oakland Bay Bridge, United States", imgPath: slider_1 },
+// 	{ label: "Bird", imgPath: slider_2 },
+// 	{ label: "Bali, Indonesia", imgPath: slider_3 },
+//   ];
 
 const Home = () => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const maxSteps = sliderImages.length;
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -52,7 +62,21 @@ const Home = () => {
   return (
     <>
       <div id="banner">
-        <Box sx={{ width: "1920px", flexGrow: 1 }}>
+        <Box
+          sx={{
+            width: {
+              xs: "250%",
+              sm: "200%",
+              md: "1920px",
+              lg: "1920px",
+            },
+            margin: 0,
+            position: "relative",
+            marginLeft: "50%",
+            transform: "translate(-50%, 0)",
+            flexGrow: 1,
+          }}
+        >
           <AutoPlaySwipeableViews
             interval={5000}
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -60,7 +84,7 @@ const Home = () => {
             onChangeIndex={handleStepChange}
             enableMouseEvents
           >
-            {images.map((step, index) => (
+            {sliderImages.map((step, index) => (
               <div key={step.label}>
                 {Math.abs(activeStep - index) <= 2 ? (
                   <Box
@@ -92,7 +116,42 @@ const Home = () => {
           </Box>
         </Container>
       </div>
-      {/* <img src={imgAfter} alt="" style={{ marginTop: "-1px" }} /> */}
+      <Container id="main_area" sx={{ pt: "60px", pb: "60px" }}>
+        <Main />
+      </Container>
+
+      <Box
+        id="home_services_offer"
+        sx={{ backgroundColor: "primary.main", color: "text.white", boxShadow: 10 }}
+      >
+        <Container sx={{ pt: "45px", pb: "45px" }}>
+          <ServicesWeOffer />
+        </Container>
+      </Box>
+
+      <Box
+        id="home_what_we_do"
+        sx={{
+          backgroundColor: "primary.main",
+          color: "text.white",
+          boxShadow: 10,
+          borderTop: "1px solid #ffffff47",
+        }}
+      >
+        <Container sx={{ pt: "45px", pb: "45px" }}>
+          <WhatWeDo />
+        </Container>
+      </Box>
+
+      <Box>
+        <GoogleMap />
+      </Box>
+
+      <Box id="home_contact_us">
+        <Container sx={{ pt: "45px", pb: "45px" }}>
+          <ContactUs />
+        </Container>
+      </Box>
     </>
   );
 };

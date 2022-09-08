@@ -5,6 +5,18 @@ const Theme1 = createTheme({
     primary: {
       main: "#1c1f43",
     },
+    background: {
+      white: "#fff",
+    },
+    text: {
+      primary: "#222a94",
+      secondary: "#4273d9",
+      tertiary: "#85ccef",
+
+      white: "#fff",
+      black: "#000",
+      dark: "#000",
+    },
   },
 });
 

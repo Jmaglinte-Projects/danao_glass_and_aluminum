@@ -3,14 +3,19 @@ import { Routes, Route } from "react-router-dom";
 import { Container } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material";
 import Theme1 from "./themes/theme1";
+
 import Header from "./components/Common/Header";
 import Footer from "./components/Common/Footer";
+
+// PAGES
 import SigninSide from "./components/Auth/SigninSide";
 import Signup from "./components/Auth/Signup";
 import Images from "./components/Images/Images";
 import Receipt from "./components/Receipt";
 
 import Home from "./pages/Home";
+import ShowRoom from "./pages/ShowRoom";
+import Accessories from "./pages/Accessories";
 
 function App() {
   return (
@@ -27,9 +32,12 @@ function App() {
             <Route path="/receipt" element={<Receipt />} />
             <Route path="/signin" element={<SigninSide />} />
             <Route path="/temp-signup" element={<Signup />} />
+
+            <Route path="/show-room" element={<ShowRoom />} />
+            <Route path="/accessories" element={<Accessories />} />
           </Routes>
         </div>
-        <Container maxWidth="xl">
+        <Container>
           <Footer />
         </Container>
       </div>
