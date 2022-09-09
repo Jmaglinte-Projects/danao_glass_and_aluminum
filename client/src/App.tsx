@@ -30,7 +30,7 @@ function App() {
         <div style={{ width: "100%" }}>
           <Routes>
             <Route path="/receipt" element={<Receipt />} />
-            <Route path="/signin" element={<SigninSide />} />
+            {/* <Route path="/signin" element={<SigninSide />} /> */}
             <Route path="/temp-signup" element={<Signup />} />
 
             <Route path="/show-room" element={<ShowRoom />} />
